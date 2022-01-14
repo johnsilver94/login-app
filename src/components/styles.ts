@@ -7,7 +7,7 @@ export const Colors = {
 	primary: '#ffffff',
 	secondary: '#E5E7EB',
 	tertiary: '#1F2937',
-	darkLight: '9CA3AF',
+	darkLight: '#9CA3AF',
 	brand: '#6D28D9',
 	green: '#10B981',
 	red: '#EF4444'
@@ -84,16 +84,64 @@ export const RightIcon = styled.TouchableOpacity`
 	position: absolute;
 	z-index: 1;
 `
-export const StyledButton = styled.TouchableOpacity`
+type StyledButtonProps = { google?: boolean }
+
+export const StyledButton = styled.TouchableOpacity<StyledButtonProps>`
 	padding: 15px;
 	background-color: ${brand};
 	justify-content: center;
+	align-items: center;
 	border-radius: 5px;
 	margin-vertical: 5px;
 	height: 60px;
+
+	${(props) =>
+		props.google == true &&
+		`
+		background-color: ${green};
+		flex-direction: row;
+		justify-content: center;
+		gap: 25px;
+	`}
 `
 
 export const ButtonText = styled.Text`
 	color: ${primary};
 	font-size: 16px;
+`
+
+export const MsgBox = styled.Text`
+	text-align: center;
+	font-size: 13px;
+`
+
+export const Line = styled.View`
+	height: 1px;
+	width: 100%;
+	background-color: ${darkLight};
+	margin-vertical: 10px;
+`
+
+export const ExtraView = styled.View`
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	padding: 10px;
+`
+
+export const ExtraText = styled.Text`
+	justify-content: center;
+	align-content: center;
+	color: ${tertiary};
+	font-size: 15px;
+`
+
+export const TextLink = styled.TouchableOpacity`
+	justify-content: center;
+	align-items: center;
+`
+
+export const TextLinkContent = styled.Text`
+	color: ${brand};
+	font-size: 15px;
 `

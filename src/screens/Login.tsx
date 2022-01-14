@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { Formik } from 'formik'
+import { Fontisto } from '@expo/vector-icons'
 
 import {
 	Colors,
@@ -9,11 +10,19 @@ import {
 	PageLogo,
 	PageTitle,
 	SubTitle,
-	StyledFormArea
+	StyledFormArea,
+	StyledButton,
+	ButtonText,
+	MsgBox,
+	Line,
+	ExtraView,
+	ExtraText,
+	TextLink,
+	TextLinkContent
 } from '@components/styles'
 import MyTextInput from '@components/MyTextInput'
 
-const { darkLight } = Colors
+const { darkLight, primary } = Colors
 
 const Login = () => {
 	const [hidePassword, setHidePassword] = useState<boolean>(true)
@@ -56,6 +65,21 @@ const Login = () => {
 								hidePassword={hidePassword}
 								setHidePassword={setHidePassword}
 							/>
+							<MsgBox>...</MsgBox>
+							<StyledButton onPress={() => handleSubmit}>
+								<ButtonText>Login</ButtonText>
+							</StyledButton>
+							<Line />
+							<StyledButton google={true} onPress={() => handleSubmit}>
+								<Fontisto name="google" color={primary} size={25} />
+								<ButtonText>Sign in with Google</ButtonText>
+							</StyledButton>
+							<ExtraView>
+								<ExtraText>Don&apos;t have an account already?</ExtraText>
+								<TextLink>
+									<TextLinkContent> Sign up</TextLinkContent>
+								</TextLink>
+							</ExtraView>
 						</StyledFormArea>
 					)}
 				</Formik>
