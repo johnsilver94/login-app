@@ -1,0 +1,19 @@
+{
+	"files.autoSave": "onWindowChange",
+
+	"editor.formatOnSave": true,
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true,
+		"source.fixAll.tslint": true
+	},
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"[javascript,javascriptreact, typescript,typescriptreact, json,jsonc, graphql]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}
